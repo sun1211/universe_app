@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:universe_app/constants.dart';
 import 'package:universe_app/models/planet_Info.dart';
+import 'package:universe_app/screen/detail/detail_screen.dart';
 
 import 'drop_menu.dart';
 import 'plant_card.dart';
@@ -43,6 +44,16 @@ class Body extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return PlanetCard(
                       planets: planets[index],
+                      press: () {
+                        Navigator.push(
+                          context,
+                          PageRouteBuilder(
+                            pageBuilder: (context, a, b) => DetailScreen(
+                              planetInfo: planets[index],
+                            ),
+                          ),
+                        );
+                      },
                     );
                   },
                 ),

@@ -79,11 +79,12 @@ class PlanetCard extends StatelessWidget {
               ),
             ],
           ),
+          //top images
           Hero(
             tag: planets.position,
             child: Image.asset(planets.iconImage),
           ),
-          //top images
+          //number images
           Positioned(
             right: 24,
             bottom: 60,
